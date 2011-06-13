@@ -1,0 +1,29 @@
+<%= form_tag do %>
+
+    <table style="width:300px;margin:auto;padding-top:200px">
+        <tr>
+          <td>
+
+            <label for="name" style="color:#f8f8ff;">Username:</label>
+          </td>
+          <td>
+            <%= text_field_tag :name, params[:name], :style => 'width: 200px' %>
+          </td>
+        </tr><tr>
+        <td>
+          <label for="password" style="color:#f8f8ff">Password:</label>
+        </td> <td>
+        <%= password_field_tag :password, params[:password], :style => 'width: 200px'%>
+      </td>
+      </tr><tr>
+        <td></td>
+        <td>
+          <div class="actions">
+            <%= submit_tag "Login", :style => 'width: 200px'%>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+<% end %>
