@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
 
-  ROLES = %w[manager housekeeper]
+  ROLES = %w[please_select manager housekeeper receptionist busboy]
   SEX = %w[Male Female]
   validates_presence_of :name
   validates_uniqueness_of :name
 
+  validate :please_select_role
   attr_accessor :password_confirmation
   validates_confirmation_of :password
 
@@ -42,6 +43,9 @@ class User < ActiveRecord::Base
   end
 
 private
+  def please_select_role
+    errors.add(:role, "- Please Select") if role == "please_select"
+  end
 
   def password_non_blank
     errors.add(:password, "Missing password") if hashed_password.blank?

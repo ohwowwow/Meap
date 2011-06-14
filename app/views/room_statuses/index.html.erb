@@ -1,8 +1,15 @@
 
-<h1>Listing room_statuses</h1>
+<h1 align="center">Listing Room</h1>
 
-<table>
-  <tr>
+<div id="form">
+  <div align="right">
+    <% if can? :create, @room_statuses %>
+    <%= button_to 'New Room status', new_room_status_path %>
+    <% end %>
+
+  </div>
+  <table>
+  <tr align="center">
     <th>Roomnum</th>
     <th><dd>Roomname</dd></th>
     <th><dd>Roomstatus</dd></th>
@@ -12,17 +19,18 @@
   </tr>
 
 <% @room_statuses.each do |room_status| %>
-  <tr>
+  <tr align="center">
     <td><%= room_status.roomnum %></td>
-    <td><%= room_status.roomname %></td>
-    <td><%= room_status.roomstatus %></td>
-    <td><%= link_to 'Show', room_status %></td>
+    <td><dd><%= room_status.roomname %></dd></td>
+    <td><dd><%= room_status.roomstatus %></dd></td>
+    <td><dd><%= link_to 'Show', room_status %></dd></td>
     <td><%= link_to 'Edit', edit_room_status_path(room_status) %></td>
+
+    <% if can? :Destroy, @room_statuses %>
     <td><%= link_to 'Destroy', room_status, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
+</div>
 
-<br />
-
-<%= link_to 'New Room status', new_room_status_path %>

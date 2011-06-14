@@ -1,20 +1,30 @@
-<h1>Listing users</h1>
+<h1 align="center">Listing Users</h1>
 
+
+
+<div id="form">
+  <% if can? :create, @users %>
+
+  <div align="right">
+    <%= button_to 'Register', new_user_path %>
+  </div>
+   <% end %>
 <table>
   <tr>
-    <th>Name</th>
+    <th>Name </th>
   </tr>
-
-<% @users.each do |user| %>
+<% for user in User.all do %>
+      <% if @cur_user.id == user.id || @cur_user.role == 'manager'%>
   <tr>
     <td><%= user.name %></td>
-    <td><%= link_to 'Show', user %></td>
+    <td><dd><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <% if can? :destroy, @users %>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
+          <% end %>
 <% end %>
 </table>
+</div>
 
-<br />
-
-<%= link_to 'New User', new_user_path %>

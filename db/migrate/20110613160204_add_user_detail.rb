@@ -8,7 +8,7 @@ class AddUserDetail < ActiveRecord::Migration
   add_column :users, :age, :integer
   add_column :users, :address, :string
   add_column :users, :email, :string
-  add_column :users, :tel, :integer
+  add_column :users, :tel, :string
   end
 
   def self.down

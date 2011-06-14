@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20110613165716) do
     t.integer  "age"
     t.string   "address"
     t.string   "email"
-    t.integer  "tel"
+    t.in   "tel"
   end
 
 end

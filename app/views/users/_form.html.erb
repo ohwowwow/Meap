@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :Username %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -23,10 +23,12 @@
     <%= f.label :user_password_confirmation %><br />
     <%= f.text_field :password_confirmation %>
   </div>
+  <% if @cur_user.role == "manager" %>
   <div class="field">
     <%= f.label :role %>
     <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
   </div>
+  <% end %>
    <div class="field">
     <%= f.label :firstname %><br />
     <%= f.text_field :firstname %>

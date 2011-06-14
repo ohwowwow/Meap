@@ -1,6 +1,8 @@
 class RoomStatusesController < ApplicationController
   # GET /room_statuses
   # GET /room_statuses.xml
+  load_and_authorize_resource
+
   def index
     @room_statuses = RoomStatus.all
 
@@ -25,7 +27,7 @@ class RoomStatusesController < ApplicationController
   # GET /room_statuses/new.xml
   def new
     @room_status = RoomStatus.new
-
+    @cur_user = User.find_by_id(session[:user_id])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @room_status }
@@ -35,12 +37,14 @@ class RoomStatusesController < ApplicationController
   # GET /room_statuses/1/edit
   def edit
     @room_status = RoomStatus.find(params[:id])
+    @cur_user = User.find_by_id(session[:user_id])
   end
 
   # POST /room_statuses
   # POST /room_statuses.xml
   def create
     @room_status = RoomStatus.new(params[:room_status])
+    @cur_user = User.find_by_id(session[:user_id])
 
     respond_to do |format|
       if @room_status.save
@@ -57,6 +61,7 @@ class RoomStatusesController < ApplicationController
   # PUT /room_statuses/1.xml
   def update
     @room_status = RoomStatus.find(params[:id])
+    @cur_user = User.find_by_id(session[:user_id])
 
     respond_to do |format|
       if @room_status.update_attributes(params[:room_status])

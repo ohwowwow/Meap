@@ -17,7 +17,7 @@ body {
 
 h1, h2, h3 {
 	margin: 0;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	font-weight: normal;
 	color: #daa520;
 }
@@ -487,4 +487,9 @@ hr { display: none; }
 
 #login table{
     width:inherit;
+}
+
+#form
+{
+   margin-top:50px;
 }

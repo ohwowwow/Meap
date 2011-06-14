@@ -63,6 +63,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] mail (v2.2.19, /Library/Ruby/Gems/1.8/gems/mail-2.2.19)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] tzinfo (v0.3.27, /Library/Ruby/Gems/1.8/gems/tzinfo-0.3.27)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /Library/Ruby/Gems/1.8/gems/builder-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] sqlite3-ruby (v1.3.3, /Library/Ruby/Gems/1.8/gems/sqlite3-ruby-1.3.3)" level="application" />
   </component>
 </module>
 
