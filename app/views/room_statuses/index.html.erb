@@ -4,15 +4,15 @@
 <div id="form">
   <div align="right">
     <% if can? :create, @room_statuses %>
-    <%= button_to 'New Room status', new_room_status_path %>
+    <%= button_to 'Create New Room', new_room_status_path %>
     <% end %>
 
   </div>
   <table>
   <tr align="center">
-    <th>Roomnum</th>
-    <th><dd>Roomname</dd></th>
-    <th><dd>Roomstatus</dd></th>
+    <th>Room Number</th>
+    <th><dd>Room Name</dd></th>
+    <th><dd>Room Status</dd></th>
     <th></th>
     <th></th>
     <th></th>
