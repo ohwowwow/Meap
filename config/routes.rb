@@ -1,4 +1,8 @@
 MyProject::Application.routes.draw do
+  resources :dailyhouses
+
+  resources :guestmessages
+
   resources :room_statuses
 
   get "dashboard/login"

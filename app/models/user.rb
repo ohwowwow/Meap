@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :guestmessages
+
   ROLES = %w[please_select manager housekeeper receptionist busboy]
   SEX = %w[Male Female]
   validates_presence_of :name

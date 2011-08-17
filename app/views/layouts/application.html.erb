@@ -40,8 +40,12 @@ Released   : 20091101
           <% if can? :read, RoomStatus %>
           <li><%= link_to "Management", :controller => :room_statuses, :action => :index %></li>
           <% end %>
-          <li><a href="#">Guest Message</a></li>
-          <li><a href="#">Daily Housekeeping</a></li>
+          <% if can? :read, Guestmessage %>
+          <li><%= link_to "Guest Message", :controller => :guestmessages, :action => :index %></li>
+          <% end %>
+          <% if can? :read, Dailyhouse %>
+          <li><%= link_to "Daily Housekeeping", :controller => :dailyhouses, :action => :index%></li>
+          <% end %>
           <li><%= link_to "Account", :controller => :users, :action => :index%></li>
           <li><%= link_to "Logout", :controller => :dashboard, :action => :logout %></li>
 

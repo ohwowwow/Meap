@@ -3,4 +3,7 @@ class RoomStatus < ActiveRecord::Base
               ["Deluxe", "Deluxe"], ["Superior", "Superior"]]
   STATUS = %w[Available Used]
 
+  has_many :guestmessages
+
+
 end

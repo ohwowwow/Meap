@@ -31,8 +31,13 @@ class Ability
     can :manage, :all
   elsif user.role == "receptionist"
     can [:read, :update], [User, RoomStatus]
-  elsif user.role == "housekeeper"||"busboy"
+  elsif user.role == "housekeeper"
     can [:read, :update], [User]
+    can [:read], [Dailyhouse]
+  elsif user.role == "busboy"
+    can [:read, :update], [User]
+    cannot [:manage], [Dailyhouse,Guestmessage]
   end
   end
+
 end

@@ -10,7 +10,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613165716) do
+ActiveRecord::Schema.define(:version => 20110817185529) do
+
+  create_table "dailyhouses", :force => true do |t|
+    t.string   "comment"
+    t.string   "sheets"
+    t.string   "pillowcases"
+    t.string   "blanket"
+    t.string   "towelbath"
+    t.string   "towelface"
+    t.string   "bathmats"
+    t.string   "bathrugs"
+    t.string   "showercurtains"
+    t.string   "bedpads"
+    t.string   "washcloths"
+    t.string   "handtowel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "daily_roomnum"
+  end
+
+  create_table "guestmessages", :force => true do |t|
+    t.integer  "users_id"
+    t.string   "title"
+    t.string   "guest_name"
+    t.integer  "room_statuses_id"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "room_statuses", :force => true do |t|
     t.integer  "roomnum"
