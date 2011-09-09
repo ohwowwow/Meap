@@ -12,18 +12,18 @@
   <% end %>
   <% if @cur_user.role == "manager" %>
   <div class="field">
-    <%= f.label :"Room Number" %><br />
+    <b style="color:#f4a460;"><%= f.label :"Room Number" %><br />   </b>
     <%= f.text_field :roomnum %>
   </div>
   <% end %>
   <% if @cur_user.role == "manager" %>
   <div class="field">
-    <%= f.label :"Room Name" %><br />
+    <b style="color:#f4a460;"><%= f.label :"Room Name" %><br />    </b>
     <%= f.select :roomname, RoomStatus::ROOMNAME %>
   </div>
   <% end %>
   <div class="field">
-    <%= f.label :"Room Status" %><br />
+    <b style="color:#f4a460;"><%= f.label :"Room Status" %><br />    </b>
     <%= f.collection_select :roomstatus, RoomStatus::STATUS, :to_s, :humanize %>
   </div>
   <div class="actions">

@@ -11,16 +11,16 @@
    <% end %>
 <table>
   <tr>
-    <th>Name </th>
+    <th style="color:#f4a460;">Name </th>
   </tr>
 <% for user in User.all do %>
       <% if @cur_user.id == user.id || @cur_user.role == 'manager'%>
   <tr>
-    <td><%= user.name %></td>
-    <td><dd><%= link_to 'Show', user %></td>
+    <td style="color:#ffdead;"><%= user.name %></td>
+    <td><dd><%= link_to 'View', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <% if can? :destroy, @users %>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
           <% end %>

@@ -12,53 +12,53 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Username %><br />
+    <b style="color:#f4a460;"><%= f.label :Username %><br />   </b>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :user_password %><br />
+    <b style="color:#f4a460;"><%= f.label :user_password %><br />  </b>
     <%= f.text_field :password %>
   </div>
    <div class="field">
-    <%= f.label :user_password_confirmation %><br />
+    <b style="color:#f4a460;"><%= f.label :user_password_confirmation %><br />    </b>
     <%= f.text_field :password_confirmation %>
   </div>
   <% if @cur_user.role == "manager" %>
   <div class="field">
-    <%= f.label :role %>
+    <b style="color:#f4a460;"><%= f.label :role %>      </b>
     <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
   </div>
   <% end %>
    <div class="field">
-    <%= f.label :firstname %><br />
+    <b style="color:#f4a460;"><%= f.label :firstname %><br />         </b>
     <%= f.text_field :firstname %>
   </div>
     <div class="field">
-    <%= f.label :surname %><br />
+    <b style="color:#f4a460;"><%= f.label :surname %><br />     </b>
     <%= f.text_field :surname %>
   </div>
     <div class="field">
-    <%= f.label :nickname %><br />
+    <b style="color:#f4a460;"><%= f.label :nickname %><br />     </b>
     <%= f.text_field :nickname %>
   </div>
     <div class="field">
-    <%= f.label :sex %><br />
+    <b style="color:#f4a460;"><%= f.label :sex %><br />         </b>
     <%= f.collection_select :sex, User::SEX, :to_s, :humanize %>
   </div>
     <div class="field">
-    <%= f.label :age %><br />
+    <b style="color:#f4a460;"><%= f.label :age %><br />           </b>
     <%= f.text_field :age %>
   </div>
     <div class="field">
-    <%= f.label :address %><br />
+    <b style="color:#f4a460;"><%= f.label :address %><br />         </b>
     <%= f.text_field :address %>
   </div>
     <div class="field">
-    <%= f.label :email %><br />
+    <b style="color:#f4a460;"><%= f.label :email %><br />         </b>
     <%= f.text_field :email %>
   </div>
     <div class="field">
-    <%= f.label :tel %><br />
+    <b style="color:#f4a460;"><%= f.label :tel %><br />          </b>
     <%= f.text_field :tel %>
   </div>
   <div class="actions">

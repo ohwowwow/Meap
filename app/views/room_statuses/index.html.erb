@@ -9,7 +9,7 @@
 
   </div>
   <table>
-  <tr align="center">
+  <tr align="center" style="color:#f4a460;">
     <th>Room Number</th>
     <th><dd>Room Name</dd></th>
     <th><dd>Room Status</dd></th>
@@ -20,14 +20,14 @@
 
 <% @room_statuses.each do |room_status| %>
   <tr align="center">
-    <td><%= room_status.roomnum %></td>
-    <td><dd><%= room_status.roomname %></dd></td>
-    <td><dd><%= room_status.roomstatus %></dd></td>
-    <td><dd><%= link_to 'Show', room_status %></dd></td>
+    <td style="color:#ffdead;"><%= room_status.roomnum %></td>
+    <td style="color:#ffdead;"><dd><%= room_status.roomname %></dd></td>
+    <td style="color:#ffdead;"><dd><%= room_status.roomstatus %></dd></td>
+    <td><dd><%= link_to 'View', room_status %></dd></td>
     <td><%= link_to 'Edit', edit_room_status_path(room_status) %></td>
 
     <% if can? :Destroy, @room_statuses %>
-    <td><%= link_to 'Destroy', room_status, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', room_status, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
